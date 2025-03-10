@@ -1,0 +1,47 @@
+@import './../../helper/mixin.module.scss';
+.random{
+    width: 90%;
+    max-width: 90%;
+    margin-left: 5%;
+
+    h3{
+        @include primaryFont(400);
+        font-size: 20px;
+       }
+    
+       hr{
+        @include divider;
+       }
+    
+       .productsList{
+        @include flexDirection(row);
+       
+        
+        .fistDiv{
+            position: relative;
+
+            cursor: pointer;
+           
+            
+            img{
+                width: 100%;
+                height: 148px;
+                min-width: 148px;
+                margin: 0;
+                padding: 0;
+               
+            }
+            .ProductName{
+                background-color: $lightGreen;
+                color: $white;
+                padding: 9px;
+                position: absolute;
+                left: 0;
+                width: 88%;
+               top: 0;
+               text-align: center;
+            }
+        }
+        
+       }
+}

@@ -1,0 +1,68 @@
+@import './../../helper/colors.module.scss';
+@import './../../helper/mixin.module.scss';
+.nav{
+    width: 100%;
+    margin: 0;
+    background-color: $white;
+    padding: 33px 0 33px 0;
+   
+    .navElements{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: 5%;
+        a{
+            text-decoration: none;
+        }
+        .logo{
+            display: flex;
+            flex-direction: row;
+            span{
+                padding: 0;
+                &:nth-child(1){
+                    background-color: $darkGreen;
+                    color: $dar-White;
+                    padding: 9px 21px 9px 21px;
+                    margin: 0;
+                    h3{
+                        margin: 0;
+                        padding: 0;
+                        font-size: 32px;
+                        @include primaryFont(400);
+                    }
+                }
+                &:nth-child(2){
+                    border: 1px solid $darkGreen;
+                    padding: 9px 21px 9px 21px;
+                    h3{
+                        font-size: 32px;
+                        margin: 0;
+                        padding: 0;
+                        color: $darkGreen;
+                        @include primaryFont(400);
+                    }
+                }
+            }
+        }
+        .secondElement{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            .contained{
+                background-color: $lightGreen;
+            }
+            ul{
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+               list-style: none;
+               @include notMarPd;
+               
+            }
+        }
+    }
+
+    
+}

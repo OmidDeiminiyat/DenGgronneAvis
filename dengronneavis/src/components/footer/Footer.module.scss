@@ -1,0 +1,33 @@
+@import './../../helper/mixin.module.scss';
+@import './../../helper/colors.module.scss';
+.footer{
+background-color: $lightGreen;
+padding: 12px 0 12px 0;
+section{
+    width: 80%;
+    margin-left: 10%;
+    @include gridStyle(repeat(3, 1fr));
+
+    div{
+
+        &:nth-child(2){
+           padding-left: 120px;
+        }
+        h3{
+            @include primaryFont(400);
+            color: $white;
+        }
+        p{
+            @include primaryFont(400);
+            color: $black;
+            font-size: 12px;
+        }
+        a{
+            color: $white;
+            text-decoration: none;
+            @include primaryFont(400);
+        }
+    }
+
+}
+}

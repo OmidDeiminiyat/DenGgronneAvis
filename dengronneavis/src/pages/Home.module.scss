@@ -1,0 +1,5 @@
+@import './../helper/mixin.module.scss';
+.HomeMain{
+   @include primaryWidth;
+   margin-top: 60px;
+}

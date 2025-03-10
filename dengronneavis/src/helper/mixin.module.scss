@@ -1,0 +1,34 @@
+@import './font.module.scss';
+@import './colors.module.scss';
+
+@mixin primaryFont($weight){
+    font-family: "Roboto", sans-serif;
+    font-weight: $weight;
+}
+@mixin gridStyle($count){
+    display: grid;
+    grid-template-columns: $count;
+    gap: 1rem;
+}
+
+@mixin notMarPd{
+    margin: 0;
+    padding: 0;
+}
+
+@mixin divider {
+    width: 100%;
+    height: 4px;
+    background-color: $darkGreen;
+}
+
+@mixin primaryWidth{
+    width: 80%;
+    margin-left: 10%;
+}
+
+@mixin flexDirection($direction) {
+    display: flex;
+    flex-direction: $direction;
+    gap: 1rem;
+}
