@@ -30,6 +30,10 @@
     .productSection{
         width: 90%;
         margin-left: 5%;
+        a{
+            text-decoration: none;
+            color: $black
+        }
        
        div{
         @include gridStyle(repeat(3, 1fr));

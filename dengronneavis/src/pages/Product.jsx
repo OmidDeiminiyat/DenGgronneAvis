@@ -73,16 +73,17 @@ export const ProductPage = () => {
             <div>
               {products.length > 0 ? (
                 products.map((product) => (
+                    <Link to={`/pages/Product/${product.slug}`}>
                     <figure key={product.id}>
                             <img src={product.image} alt="" />
                             <span className={style.ProductName} >{product.price}</span>                        
                         <figcaption>
-                        <Link to={`/pages/Product/${product.slug}`}><h3>{product.name}</h3></Link>
+                        <h3>{product.name}</h3>
                             <p>{product.description}</p>
                         </figcaption>
                         
                     </figure>
-                  
+                    </Link>
                 ))
               ) : (
                 <p>No products found for this category.</p>
