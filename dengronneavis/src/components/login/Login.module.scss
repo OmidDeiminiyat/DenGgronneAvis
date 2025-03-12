@@ -1,5 +1,5 @@
-@import './../../helper/mixin.module.scss';
-@import './../../helper/colors.module.scss';
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/mixin.module.scss' as color;
 .Login{
     width: 80%;
     margin-left: 10%;
@@ -11,19 +11,19 @@
     }
     h3{
         text-align: center;
-        @include primaryFont(300);
+        @include c.primaryFont(300);
         font-size: 32px;
     }
     div{
-        @include gridStyle(1fr);
-        @include notMarPd;
+        @include c.gridStyle(1fr);
+        @include c.notMarPd;
         gap: 0;
         &:nth-child(2){
             margin-top: 30px
         }
         input[type=email]{
-            @include notMarPd;
-            background-color: $input;
+            @include c.notMarPd;
+            background-color: color.$input;
             border: 2px solid rgba(29, 132, 57, 0.5);
             height: 27px;
             background-image: url('./../assets/icone/arroba.png');
@@ -32,8 +32,8 @@
             background-position: 98%;
         }
         input[type=password]{
-            @include notMarPd;
-            background-color: $input;
+            @include c.notMarPd;
+            background-color: color.$input;
             border: 2px solid rgba(29, 132, 57, 0.5);
             height: 27px;
             background-image: url('./../assets/icone/lock.png');
@@ -42,23 +42,23 @@
             background-position: 98%;
         }
         label{
-            @include notMarPd;
+            @include c.notMarPd;
         }
     }
     p{
-        @include primaryFont(300);
+        @include c.primaryFont(300);
         font-size: 14px;
         span{
-            color: $darkGreen;
+            color: color.$darkGreen;
             cursor: pointer;
         }
     }
     button{
-        background-color: $lightGreen;
+        background-color: color.$lightGreen;
         border: none;
         width: 96px;
         height: 36px;
-        color: $white;
+        color: color.$white;
         margin-left: 80%;
         margin-top: 30px;
     }

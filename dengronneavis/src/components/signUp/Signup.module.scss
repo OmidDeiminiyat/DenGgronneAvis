@@ -1,5 +1,7 @@
-@import './../../helper/mixin.module.scss';
-@import './../../helper/mixin.module.scss';
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/mixin.module.scss' as color;
+
+
 .SignUp{
     width: 80%;
     margin-left: 10%;
@@ -10,49 +12,49 @@
         margin-bottom: 120px;
         h3{
             text-align: center;
-            @include primaryFont(300);
+            @include c.primaryFont(300);
             font-size: 32px;
         }
         div{
-            @include gridStyle(1fr);
-            @include notMarPd;
+            @include c.gridStyle(1fr);
+            @include c.notMarPd;
             margin-top: 30px;
             gap: 0;
             &:nth-child(2){
                 margin-top: 30px
             }
             input{
-                @include notMarPd;
-                background-color: $input;
+                @include c.notMarPd;
+                background-color: color.$input;
                 border: 2px solid rgba(29, 132, 57, 0.5);
                 height: 27px;
 
             }
             label{
-                @include notMarPd;
+                @include c.notMarPd;
                 font-size: 14px;
-                @include primaryFont(300);
+                @include c.primaryFont(300);
             }
         }
         .inputsSpan{
-            @include flexDirection(row);
+            @include c.flexDirection(row);
             justify-content: space-between;
             section{
          
-                @include flexDirection(row);
+                @include c.flexDirection(row);
             }
             label{
                 width: 80%;
-                @include notMarPd;
+                @include c.notMarPd;
                 font-size: 11px;
-                @include primaryFont(300);
+                @include c.primaryFont(300);
             }
             button{
-                background-color: $lightGreen;
+                background-color: color.$lightGreen;
                 border: none;
                 width: 170px;
                 height: 36px;
-                color: $white;
+                color: color.$white;
 
             }
         }
