@@ -9,6 +9,8 @@ import { Category } from "./pages/Category";
 import { Footer } from "./components/footer/footer";
 import { ProductPage } from "./pages/Product";
 import { ProductDetail } from "./components/ProductDetail";
+import { ProductList } from "./pages/newProduct";
+import ProductSide from "./components/ProductSide";
 
 function App() {
   return (
@@ -17,12 +19,14 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pages/annonce" element={<Annonce />} />
+          <Route path="/pages/Annonce" element={<Annonce />} />
           <Route path="/pages/login" element={<Login />} />
-          <Route path="/pages/minside" element={<MinSide />} />
+          <Route path="/pages/Profile" element={<MinSide />} />
           <Route path="/pages/category/:categoryId" element={<Category />} />
           <Route path="/pages/Product" element={<ProductPage />} />
           <Route path="/pages/Product/:slug" element={<ProductDetail />} />
+          <Route path="/pages/newProduct" element={<ProductList />} />
+          <Route path="/pages/newProduct/:productSlug" element={<ProductSide />} />
         </Routes>
         <Footer />
       </Router>

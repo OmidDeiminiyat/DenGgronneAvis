@@ -29,7 +29,6 @@ export const ProductDetail = () => {
       <p><strong>Price:</strong> {product.price} USD</p>
       <p><strong>Description:</strong> {product.description}</p>
       
-      {/* Back to Product List */}
       <Link to="/pages/Product">Back to Products</Link>
     </div>
   );

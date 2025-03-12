@@ -1,0 +1,25 @@
+@import './../../helper/colors.module.scss';
+@import './../../helper/mixin.module.scss';
+
+.categorySection{
+
+    ul{
+        li{
+            list-style: none;
+            margin-top: 6px;
+            text-align: left;
+              button{
+                    border: none;
+                    cursor: pointer;
+                    color: rgba(0, 0, 0, 0.894);
+                    @include primaryFont(300);
+                    text-align: left;
+                    
+                    &:focus {
+                       color: $focused;
+                       @include primaryFont(600);
+                    }
+                }
+        }
+    }
+}

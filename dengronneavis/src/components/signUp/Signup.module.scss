@@ -1,0 +1,60 @@
+@import './../../helper/mixin.module.scss';
+@import './../../helper/mixin.module.scss';
+.SignUp{
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    form{
+        width: 40%;
+        margin-left: 30%;
+        margin-bottom: 120px;
+        h3{
+            text-align: center;
+            @include primaryFont(300);
+            font-size: 32px;
+        }
+        div{
+            @include gridStyle(1fr);
+            @include notMarPd;
+            margin-top: 30px;
+            gap: 0;
+            &:nth-child(2){
+                margin-top: 30px
+            }
+            input{
+                @include notMarPd;
+                background-color: $input;
+                border: 2px solid rgba(29, 132, 57, 0.5);
+                height: 27px;
+
+            }
+            label{
+                @include notMarPd;
+                font-size: 14px;
+                @include primaryFont(300);
+            }
+        }
+        .inputsSpan{
+            @include flexDirection(row);
+            justify-content: space-between;
+            section{
+         
+                @include flexDirection(row);
+            }
+            label{
+                width: 80%;
+                @include notMarPd;
+                font-size: 11px;
+                @include primaryFont(300);
+            }
+            button{
+                background-color: $lightGreen;
+                border: none;
+                width: 170px;
+                height: 36px;
+                color: $white;
+
+            }
+        }
+    }
+}

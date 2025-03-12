@@ -117,9 +117,3 @@ export const ProductPage = () => {
     </main>
   );
 };
-
-
-
-
-   {/*  */}
-    

@@ -1,0 +1,9 @@
+@import './../helper/mixin.module.scss';
+@import './../helper/colors.module.scss';
+.newProducts{
+   width: 80%;
+   margin-left: 10%;
+   .datas{
+    @include flexDirection(row);
+   }
+}

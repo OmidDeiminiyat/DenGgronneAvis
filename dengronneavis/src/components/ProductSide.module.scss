@@ -1,0 +1,35 @@
+@import './../helper/colors.module.scss';
+@import './../helper/mixin.module.scss';
+.ProductSide{
+    width: 90%;
+    margin-left: 5%;
+    div{
+        @include flexDirection(row);
+        figure{
+            @include notMarPd;
+            width: 50%;
+            margin-left: 20%;
+            img{
+                width: 100%;
+            }
+            figcaption{
+               
+                h3{
+                    @include primaryFont(400);
+                    font-size: 36px;
+                    @include notMarPd;
+                }
+                p{
+                    @include primaryFont(300);
+                    font-size: 14px;
+                    @include notMarPd;
+                }
+                h5{
+                    @include primaryFont(500);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+   
+}

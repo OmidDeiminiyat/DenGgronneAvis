@@ -25,7 +25,7 @@ export function Navbar() {
                 <ul>
                     <li><Link to="/pages/login"><img src={mail} alt="" /> </Link></li>
                     <li><img src={info} alt="" /></li>
-                    <li><Link to="/pages/minside"><img src={test} alt="" /></Link></li>
+                    <li><Link to="/pages/Profile"><img src={test} alt="" /></Link></li>
                 </ul>
             </div>
         </div>
