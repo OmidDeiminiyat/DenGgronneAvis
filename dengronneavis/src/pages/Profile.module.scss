@@ -1,0 +1,27 @@
+@use './../helper/mixin.module.scss' as c; 
+@use './../helper/colors.module.scss' as color;
+
+.PrifolePage{
+    @include c.primaryWidth;
+    margin-top: 60px;
+
+   .buts{
+    margin-top: 30px;
+    width: 90%;
+    margin-left: 5%;
+    .singleButt{
+        width: 50%;
+        border: none;
+        height: 27px;
+        background-color: color.$darkGreen;
+        color: c.$white;
+        cursor: pointer;
+    }
+    .secondBut{
+        border: 2px solid color.$darkGreen;
+        background-color: color.$white;
+        color: color.$darkGreen;
+        cursor: pointer;
+    }
+   }
+}

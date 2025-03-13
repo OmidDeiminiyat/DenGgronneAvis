@@ -66,7 +66,8 @@ export const SignUp = ({ toggleForm }) => {
       const response = await fetch("http://localhost:4242/users", requestOptions);
       const data = await response.json(); // Assuming server returns JSON
       if (response.ok) {
-        setMessage("Signup successful! You can now log in.");
+        setMessage(`Signup successful! You can now log in.  `);
+        toggleForm();
         setFormData({
           email: "",
           password: "",
@@ -130,7 +131,7 @@ export const SignUp = ({ toggleForm }) => {
             <input type="text" name="city" value={formData.city} onChange={handleChange} />
             {errors.city && <p className="error">{errors.city}</p>}
             </div>
-            <p>Har du allerede en konto hos os? Klivk <span onClick={toggleForm} > her </span> for at vende tilbage til login</p>
+            <p>Har du allerede en konto hos os? Klik <span onClick={toggleForm} > her </span> for at vende tilbage til login</p>
             <span className={style.inputsSpan}>
                 <section>
                     <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />

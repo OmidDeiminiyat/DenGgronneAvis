@@ -1,0 +1,35 @@
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/colors.module.scss' as color;
+
+.minProfile{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 60px;
+    @include c.flexDirection(row);
+
+    .firstSec{
+        width: 50%;
+        div{
+            @include c.flexDirection(column);
+            gap: 0;
+            label{
+                @include c.notMarPd;
+                font-size: 12px;
+                @include c.primaryFont(300);
+            }
+            input{
+                @include c.notMarPd;
+                margin-bottom: 15px;
+                background-color: rgba(237, 236, 236, 1);
+                border: 1px solid color.$darkGreen;
+                height: 30px;
+                
+            }
+        }
+    }
+
+    .secondSec{
+        @include c.gridStyle(1fr);
+        width: 50%;
+    }
+}

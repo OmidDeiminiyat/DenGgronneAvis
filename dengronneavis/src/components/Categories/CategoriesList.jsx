@@ -11,7 +11,6 @@ export const CategoriesList = ({ onSelectCategory }) => {
       .catch(error => console.error("Error fetching categories:", error));
   }, []);
 
-  console.log(categories);
   
   return (
     <section className={style.categorySection}>
