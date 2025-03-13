@@ -33,11 +33,27 @@
         figure{
             width: 30%;
             @include c.notMarPd;
+           
             img{
                 width: 100%;
-                max-height: 150px;
+                max-height: 120px;
+                min-height: 120px;
             }
         }
     }
-   
+   .annonceLinks{
+    @include c.flexDirection(row);
+    justify-content: end;
+    margin-top: 3px;
+    a{
+        color: color.$black;
+        text-decoration: none;
+        @include c.primaryFont(300);
+        cursor: pointer;
+    }
+    button{
+        border: none;
+       @extend a;
+    }
+   }
 }
