@@ -1,0 +1,45 @@
+@use './../helper/mixin.module.scss' as c; 
+@use './../helper/colors.module.scss' as color;
+.mainAnnonce{
+    @include c.primaryWidth;
+    margin-bottom: 60px;
+    form{
+        @include c.primaryWidth;
+        h3{
+            text-align: center;
+            @include c.primaryFont(400);
+        }
+        p{
+            @extend h3;
+            @include c.primaryFont(300);
+        }
+        div{
+            @include c.gridStyle(1fr);
+            gap: 0;
+            margin-top: 21px;
+            input{
+                @include c.notMarPd;
+                
+                background-color: rgba(237, 236, 236, 1);
+                border: 2px solid color.$darkGreen;
+                height: 30px;
+            }
+            textarea{
+                @include c.notMarPd;
+               
+                background-color: rgba(237, 236, 236, 1);
+                border: 2px solid color.$darkGreen;
+            }
+        }
+        button{
+            border: none;
+            width: 20%;
+            height: 40px;
+            margin-left: 80%;
+            margin-top: 30px;
+            color: color.$white;
+            cursor: pointer;
+            background-color: color.$darkGreen;
+        }
+    }
+}

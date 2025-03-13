@@ -45,8 +45,9 @@ export const LogedIn = ({ toggleForm }) => {
       const response = await fetch("http://localhost:4242/login", requestOptions);
       const data = await response.json(); 
       if (response.ok) {
-        localStorage.setItem("access_token", data.access_token);
+        localStorage.setItem("access_token", data.data.access_token);
         window.location.href = './Profile'
+       
       } else {
         setErrors({ api: data.message || "Login failed" });
       }

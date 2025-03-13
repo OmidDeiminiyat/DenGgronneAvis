@@ -31,5 +31,39 @@
     .secondSec{
         @include c.gridStyle(1fr);
         width: 50%;
+        margin-top: 10px;
+        .checkBox{
+            @include c.flexDirection(row);
+            position: relative;
+
+            input{
+                position: absolute;
+                left: 95%;
+            }
+            label{
+                width: 90%;
+                @include c.primaryFont(300);
+                font-size: 12px;
+            }
+        }
+        .profBut{
+            @include c.flexDirection(column);
+            justify-content: end;
+            button{
+                border: none;
+                width: 26%;
+                height: 40px;
+                margin-left: 84%;
+                color: color.$white;
+                cursor: pointer;
+                &:nth-child(2){
+                    background-color: color.$darkGreen;
+                }
+                &:nth-child(1){
+                    background-color: color.$red;
+                }
+            }
+            
+        }
     }
 }

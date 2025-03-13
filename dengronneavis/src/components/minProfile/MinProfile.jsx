@@ -23,23 +23,30 @@
     };
   
     const handleSubmit = (e) => {
-      e.preventDefault();
-      const urlencoded = new URLSearchParams();
-      Object.keys(formData).forEach((key) => {
-        urlencoded.append(key, formData[key]);
-      });
-  
-      const requestOptions = {
-        method: "PATCH",
-        body: urlencoded,
-        redirect: "follow",
+        e.preventDefault();
+        const urlencoded = new URLSearchParams();
+        Object.keys(formData).forEach((key) => {
+          urlencoded.append(key, formData[key]);
+        });
+        
+        const accessToken = localStorage.getItem('access_token');
+        
+        const requestOptions = {
+          method: "PATCH",
+          headers: {
+            "Authorization": `Bearer ${accessToken}`, 
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: urlencoded,
+          redirect: "follow",
+        };
+      
+        fetch("http://localhost:4242/users", requestOptions)
+          .then((response) => response.json())  // Convert response to JSON
+          .then((result) => console.log(result))
+          .catch((error) => console.log("error", error));
       };
-  
-      fetch("http://localhost:4242/users", requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.log("error", error));
-    };
+      
   
     return (
       <form className={style.minProfile} onSubmit={handleSubmit}>
@@ -75,23 +82,21 @@
             </div>
         </section>
         <section className={style.secondSec} >
-            <div>
-            <label>Jeg ønsker at modtage nyheder om klima-indsatsen, gode tilbud, ekslusive deals og lignende promoverings-mails fra den grønne avis og samarbejds-parnere?</label>
+            <div className={style.checkBox}>
+                <label>Jeg ønsker at modtage nyheder om klima-indsatsen, gode tilbud, ekslusive deals og lignende promoverings-mails fra den grønne avis og samarbejds-parnere?</label>
                 <input type="checkbox" name="hasNewsletter" onChange={handleChange} /> 
                 
             </div>
-            <div>
-            <label>Jeg ønsker at modtage notifikationer i form af emails når der sker en opdatering på en af mine annoncer eller jeg modtager en ny henvendelse?</label>
+            <div className={style.checkBox}>
+                <label>Jeg ønsker at modtage notifikationer i form af emails når der sker en opdatering på en af mine annoncer eller jeg modtager en ny henvendelse?</label>
                 <input type="checkbox" name="hasNotification" onChange={handleChange} /> 
                 
             </div>
-        
-
-
-         
-    
-
-            <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded mt-2">Submit</button>
+            <div className={style.profBut} >
+                <button type="">Slet profile</button>
+                <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded mt-2">Gem ændringer</button>
+            </div>
+            
         </section>
         
       </form>
