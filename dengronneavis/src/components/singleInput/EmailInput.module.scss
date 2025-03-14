@@ -1,6 +1,15 @@
 @use './../../helper/mixin.module.scss' as c; 
 @use './../../helper/colors.module.scss' as color;
+
 .textfield{
    @include c.flexDirection(row);
-
+   gap: 0;
+   button{
+      margin: 0;
+      background-color: color.$darkGreen;
+      color: c.$white;
+      border: 0;
+      font-size: 13px;
+      padding: 6px;
+   }
 }
