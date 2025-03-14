@@ -1,0 +1,36 @@
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/colors.module.scss' as color;
+
+.mainComment{
+    width: 100%;
+    @include c.flexDirection(row);
+    @media(max-width:600px){
+        @include c.flexDirection(column);
+    }
+
+    div{
+        width: 100%;
+      
+        p{
+            @include c.notMarPd;
+            @include c.primaryFont(300);
+            font-size: 12px;
+        }
+        
+        ul{
+            width: 100%;
+            min-height: 60px;
+            border: 1px solid color.$darkGreen;
+            text-align: left;
+            @include c.notMarPd;
+            margin-bottom: 30px;
+            li{
+                list-style: none;
+                text-align: left;
+                @include c.notMarPd;
+                text-decoration: none;
+                padding: 9px;
+            }
+        }
+    }
+}

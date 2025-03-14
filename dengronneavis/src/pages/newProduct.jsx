@@ -27,7 +27,10 @@ export const NewProduct = () => {
       <hr />
       <div className={style.datas}>
         {/* Categories List is always visible */}
-        <CategoriesList onSelectCategory={handleCategorySelect} />
+        <span className={style.cateStyle}>
+          <CategoriesList onSelectCategory={handleCategorySelect} />
+        </span>
+
 
         {/* Product List (Show when no product is selected) */}
         {!selectedProductSlug && !urlProductSlug && (

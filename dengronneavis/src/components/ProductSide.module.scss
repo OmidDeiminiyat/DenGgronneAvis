@@ -1,13 +1,13 @@
-@import './../helper/colors.module.scss';
-@import './../helper/mixin.module.scss';
+@use './../helper/mixin.module.scss' as c; 
+@use './../helper/colors.module.scss' as color;
 .ProductSide{
     width: 90%;
     margin-left: 5%;
     margin-top: 30px;
     div{
-        @include flexDirection(row);
+        @include c.flexDirection(row);
         figure{
-            @include notMarPd;
+            @include c.notMarPd;
             width: 50%;
             margin-left: 20%;
             img{
@@ -17,21 +17,36 @@
             figcaption{
                
                 h3{
-                    @include primaryFont(400);
+                    @include c.primaryFont(400);
                     font-size: 36px;
-                    @include notMarPd;
+                    @include c.notMarPd;
                 }
                 p{
-                    @include primaryFont(300);
+                    @include c.primaryFont(300);
                     font-size: 14px;
-                    @include notMarPd;
+                    @include c.notMarPd;
                 }
                 h5{
-                    @include primaryFont(500);
+                    @include c.primaryFont(500);
                     font-size: 20px;
                 }
             }
         }
     }
    
+}
+.comment{
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    form{
+        width: 60%;
+        margin-left: 20%;
+        @include c.flexDirection(column);
+        
+        button{
+            width: 20%;
+            margin-left: 80%;
+        }
+    }
 }

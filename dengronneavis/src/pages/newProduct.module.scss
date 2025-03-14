@@ -1,9 +1,20 @@
-@import './../helper/mixin.module.scss';
-@import './../helper/colors.module.scss';
+@use './../helper/mixin.module.scss' as c; 
+@use './../helper/colors.module.scss' as color;
 .newProducts{
    width: 80%;
    margin-left: 10%;
+   @media(max-width:600px){
+      width: 100%;
+      margin-left: 0;
+   }
    .datas{
-    @include flexDirection(row);
+    @include c.flexDirection(row);
+
+    .cateStyle{
+      @media(max-width:600px){
+         display: none;
+      }
+    }
+   
    }
 }
