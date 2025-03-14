@@ -32,7 +32,7 @@ console.log(product);
             setLoading(false);
         }
     };
-console.log(comments.comments.length);
+console.log(comments);
 
     return (
       <section className={style.mainComment}>
@@ -43,7 +43,7 @@ console.log(comments.comments.length);
               <span>
                   {comments.comments.map((item, index) => (
                       <div key={index}>
-                          <p>{item.user.firstname} (sælger): d. 22.22.2022</p>
+                          <p>{item.user.firstname} (sælger): d. {item.createdAt}</p>
                           <ul>
                               <li>{item.comment}</li>
                           </ul>
@@ -54,8 +54,23 @@ console.log(comments.comments.length);
               <p>No comments available.</p>
           )}
       </div>
-      <div>
-          test
+      <div className={style.secondDiv}>
+          {loading ? (
+              <p>Loading comments...</p>
+          ) : comments.comments.length > 0 ? (
+              <span>
+                  {comments.comments.map((item, index) => (
+                      <div key={index}>
+                          <p>{comments.owner.firstName} (sælger): d. {item.createdAt}</p>
+                          <ul>
+                              <li>{item.comment}</li>
+                          </ul>
+                      </div>
+                  ))}
+              </span>
+          ) : (
+              <p>No comments available.</p>
+          )}
       </div>
   </section>
     );

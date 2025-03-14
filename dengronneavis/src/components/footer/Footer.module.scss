@@ -12,6 +12,10 @@ section{
         @include c.gridStyle(1fr);
         justify-content: center;
     }
+    @media (min-width: 600px) and (max-width: 800px){
+        @include c.gridStyle(repeat(2, 1fr));
+        justify-content: center;
+    }
 
     div{
 

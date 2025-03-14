@@ -50,7 +50,7 @@ export function CategorySelect() {
     const categorySlug = event.target.value; // Get category slug
     setSelectedCategory(categorySlug);
     fetchProductsByCategory(categorySlug); // Fetch products for selected category
-    navigate(`/pages/newProduct/${categorySlug}`); // Navigate to the new product page
+    navigate(`/pages/newProduct`); // Navigate to the new product page
   };
 
   return (

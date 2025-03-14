@@ -11,6 +11,11 @@
         margin-left: 0;
         @include c.gridStyle(1fr);
     }
+    @media (min-width: 600px) and (max-width: 800px){
+        width: 100%;
+        margin-left: 0;
+        max-width: 100%;
+    }
     div{
         padding: 9px 21px 9px 21px;
         &:nth-child(1){

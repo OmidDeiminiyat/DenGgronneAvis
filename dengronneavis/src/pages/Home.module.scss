@@ -1,5 +1,6 @@
-@import './../helper/mixin.module.scss';
+@use './../helper/mixin.module.scss' as c; 
+@use './../helper/colors.module.scss' as color;
 .HomeMain{
-   @include primaryWidth;
+   @include c.primaryWidth;
    margin-top: 60px;
 }
