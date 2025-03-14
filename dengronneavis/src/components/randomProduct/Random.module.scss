@@ -1,20 +1,30 @@
-@import './../../helper/mixin.module.scss';
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/colors.module.scss' as color;
+
 .random{
     width: 90%;
     max-width: 90%;
     margin-left: 5%;
+    @media(max-width:600px) {
+        width: 100%;
+        margin-left: 0;
+        max-width: 100%;
+    }
 
     h3{
-        @include primaryFont(400);
+        @include c.primaryFont(400);
         font-size: 20px;
        }
     
        hr{
-        @include divider;
+        @include c.divider;
        }
     
        .productsList{
-        @include flexDirection(row);
+        @include c.flexDirection(row);
+        @media(max-width:600px){
+            overflow: auto;
+        }
        
         
         .fistDiv{
@@ -35,9 +45,9 @@
             }
             .ProductName{
                 display: none;
-                background-color: $lightGreen;
+                background-color: color.$lightGreen;
                 opacity: 0.7;
-                color: $white;
+                color: color.$white;
                 padding: 9px;
                 position: absolute;
                 left: 0;

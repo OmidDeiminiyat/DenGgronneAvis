@@ -1,5 +1,5 @@
-@import './../../helper/mixin.module.scss';
-@import './../../helper/colors.module.scss';
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/colors.module.scss' as color;
 
 .banner{
     width: 90%;
@@ -9,6 +9,11 @@
     background-image: url('./../../assets/images/banner_image2.jpg');
     background-size: cover;
     background-position: center;
+    @media(max-width:600px) {
+        width: 100%;
+        margin-left: 0;
+        max-width: 100%;
+    }
    
     .article{
         width: 70%;
@@ -17,21 +22,26 @@
         padding-top: 10px;
  
         h3{
-            @include primaryFont(100);
+            @include c.primaryFont(100);
             font-size: 36px;
-            color: $white;
+            color: color.$white;
+            @media(max-width:600px) {
+               font-size: 6vw;
+            }
         }
         p{
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
            color: rgba(255, 255, 255, 1);
-           @include primaryFont(100);
-           
+           @include c.primaryFont(100);
+           @media(max-width:600px) {
+            font-size: 4vw;
+         }
         }
     }
 }
 
 
 hr{
-    @include divider;
+    @include c.divider;
     width: 90%;
 }

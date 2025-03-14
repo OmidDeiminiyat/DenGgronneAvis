@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import style from './RandomCategory.module.scss';
+import { useNavigate } from "react-router-dom";
 
-export function RandomCategory() {
+export function RandomCategory({onSelectCategory}) {
   const [products, setProducts] = useState([]);
   const [randomProducts, setRandomProducts] = useState([]);
+  const navigate = useNavigate();
+
 
   // Fetch products from API
   useEffect(() => {
@@ -30,7 +33,13 @@ export function RandomCategory() {
   };
 
   console.log(randomProducts);
-  
+  const handleCategoryClick = (categorySlug) => {
+    if (onSelectCategory) {
+      onSelectCategory(categorySlug); // Call the passed function to select category
+    }
+    navigate(`/pages/newProduct/${categorySlug}`); // Navigate to the NewProduct page with the category
+  };
+
   return (
     <div className={style.random} >
         <hr />
@@ -38,8 +47,8 @@ export function RandomCategory() {
       <div className={style.productsList}>
         {randomProducts.length > 0 ? (
           randomProducts.map((product) => (
-            <div className={style.fistDiv} key={product.id}>
-              <img src={product.category_image} alt="" />
+            <div className={style.fistDiv} key={product.id} onClick={() => handleCategoryClick(product.slug)} >
+              <img src={product.category_image} alt={product.name} />
               <span className={style.ProductName} >{product.name}</span>
             </div>
           ))

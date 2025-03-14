@@ -9,8 +9,8 @@ import { Category } from "./pages/Category";
 import { Footer } from "./components/footer/footer";
 import { ProductPage } from "./pages/Product";
 import { ProductDetail } from "./components/ProductDetail";
-import { ProductList } from "./pages/newProduct";
-import ProductSide from "./components/ProductSide";
+import { ProductSide } from "./components/ProductSide";
+import { NewProduct } from "./pages/newProduct";
 
 function App() {
   return (
@@ -25,8 +25,8 @@ function App() {
           <Route path="/pages/category/:categoryId" element={<Category />} />
           <Route path="/pages/Product" element={<ProductPage />} />
           <Route path="/pages/Product/:slug" element={<ProductDetail />} />
-          <Route path="/pages/newProduct" element={<ProductList />} />
-          <Route path="/pages/newProduct/:productSlug" element={<ProductSide />} />
+             <Route path="/pages/newProduct" element={<NewProduct />} />  
+           <Route path="/pages/newProduct/:productSlug" element={<ProductSide />} /> 
         </Routes>
         <Footer />
       </Router>

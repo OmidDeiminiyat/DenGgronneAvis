@@ -1,11 +1,16 @@
-@import './../../helper/mixin.module.scss';
-@import './../../helper/colors.module.scss';
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/colors.module.scss' as color;
 .donation{
-    @include gridStyle(repeat(2, 1fr));
+    @include c.gridStyle(repeat(2, 1fr));
     margin-top: 30px;
     width: 90%;
     margin-left: 5%;
     padding-bottom: 60px;
+    @media(max-width:600px){
+        width: 100%;
+        margin-left: 0;
+        @include c.gridStyle(1fr);
+    }
     div{
         padding: 9px 21px 9px 21px;
         &:nth-child(1){
@@ -19,30 +24,31 @@
             background-position: center;
         }
         h3 {
-            @include notMarPd;
-            @include primaryFont(400);
-            color: $white;
+            @include c.notMarPd;
+            @include c.primaryFont(400);
+            color: color.$white;
             font-size: 24px
         }
         .firstP {
-            @include notMarPd;
-            @include primaryFont(100);
-            color: $white;
+            @include c.notMarPd;
+            @include c.primaryFont(100);
+            color: color.$white;
             font-size: 16px
         }
         h2{
-            @include notMarPd;
-            @include primaryFont(100);
-            color: $darkGreen;
+            @include c.notMarPd;
+            @include c.primaryFont(100);
+            color: color.$darkGreen;
             font-size: 32px;
             justify-content: end;
             width: 60%;
             margin-left: 40%;
+           
         }
         .lastP{
-            @include notMarPd;
-            @include primaryFont(100);
-            color: $white;
+            @include c.notMarPd;
+            @include c.primaryFont(100);
+            color: color.$white;
             font-size: 11px;
 
         }
@@ -50,6 +56,6 @@
 }
 
 hr{
-    @include divider;
+    @include c.divider;
     width: 90%;
    }

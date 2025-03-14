@@ -1,64 +1,88 @@
-@import './../../helper/colors.module.scss';
-@import './../../helper/mixin.module.scss';
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/colors.module.scss' as color;
 .nav{
     width: 100%;
     margin: 0;
-    background-color: $white;
+    background-color: color.$white;
     padding: 33px 0 33px 0;
+    @media(max-width:600px){
+        max-width: 100%;
+    }
    
     .navElements{
-        display: flex;
-        flex-direction: row;
+       @include c.flexDirection(row);
         justify-content: space-between;
         width: 90%;
         margin-left: 5%;
+        @media(max-width:600px){
+            @include c.flexDirection(column);
+            width: 100%;
+            margin: 0;
+           
+        }
         a{
             text-decoration: none;
+         
+           
         }
         .logo{
             display: flex;
             flex-direction: row;
+            @media(max-width:600px){
+                width: 50%;
+                margin-left: 25%;
+            }
             span{
                 padding: 0;
                 &:nth-child(1){
-                    background-color: $darkGreen;
-                    color: $dar-White;
+                    background-color: color.$darkGreen;
+                    color: color.$dar-White;
                     padding: 9px 21px 9px 21px;
                     margin: 0;
                     h3{
                         margin: 0;
                         padding: 0;
                         font-size: 32px;
-                        @include primaryFont(400);
+                        @include c.primaryFont(400);
+                        @media(max-width:600px){
+                            font-size: 12px;
+                        }
                     }
                 }
                 &:nth-child(2){
-                    border: 1px solid $darkGreen;
+                    border: 1px solid color.$darkGreen;
                     padding: 9px 21px 9px 21px;
                     h3{
                         font-size: 32px;
                         margin: 0;
                         padding: 0;
-                        color: $darkGreen;
-                        @include primaryFont(400);
+                        color: color.$darkGreen;
+                        @include c.primaryFont(400);
+                        @media(max-width:600px){
+                            font-size: 12px;
+                        }
                     }
                 }
             }
         }
         .secondElement{
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
+            @include c.flexDirection(row);
+            @media(max-width:600px){
+                @include c.flexDirection(column);
+                justify-content: center;
+                margin-left: 30%;
+                width: 60%;
+            }
+            
 
             .contained{
-                background-color: $lightGreen;
+                background-color: color.$lightGreen;
             }
             ul{
-                display: flex;
-                flex-direction: row;
+                @include c.flexDirection(row);
                 gap: 1rem;
                list-style: none;
-               @include notMarPd;
+               @include c.notMarPd;
                
             }
         }
