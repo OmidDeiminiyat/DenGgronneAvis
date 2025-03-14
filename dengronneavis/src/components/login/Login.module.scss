@@ -4,10 +4,18 @@
     width: 80%;
     margin-left: 10%;
     margin-top: 50px;
+    @media(max-width:600px){
+        width: 100%;
+        margin-left: 0;
+    }
     .loginSection{
         width: 30%;
     margin-left: 35%;
     margin-bottom: 60px;
+    @media(max-width:600px){
+        width: 90%;
+        margin-left: 5%;
+    }
     }
     h3{
         text-align: center;
@@ -18,6 +26,7 @@
         @include c.gridStyle(1fr);
         @include c.notMarPd;
         gap: 0;
+     
         &:nth-child(2){
             margin-top: 30px
         }
@@ -61,5 +70,8 @@
         color: color.$white;
         margin-left: 80%;
         margin-top: 30px;
+        @media(max-width:600px){
+            margin-left: 73%;
+        }
     }
 }

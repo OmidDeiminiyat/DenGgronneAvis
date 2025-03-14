@@ -4,11 +4,19 @@
 .minAnnonce{
     @include c.primaryWidth;
     margin-bottom: 30px;
+    @media(max-width:600px){
+        width: 100%;
+        margin-left: 0;
+    }
     section{
         @include c.flexDirection(row);
         border: 1px solid color.$darkGreen;
         margin-top: 21px;
         padding: 10px 30px 10px 30px;
+        @media(max-width:600px){
+            padding: 3px 10px 3px 10px;
+            @include c.flexDirection(column);
+        }
    
         div{
             margin-top: 10px;
@@ -23,6 +31,9 @@
                 h4{
                     @include c.notMarPd;
                     @include c.primaryFont(300);
+                    @media(max-width:600px){
+                        font-size: 12px;
+                    }
                 }
             }
             p{
@@ -33,11 +44,19 @@
         figure{
             width: 30%;
             @include c.notMarPd;
-           
+            @media(max-width:600px){
+                width: 100%;
+            }
             img{
                 width: 100%;
                 max-height: 120px;
                 min-height: 120px;
+                @media(max-width:600px){
+                    width: 100%;
+                    max-height: 200px;
+                    min-height: 200px;
+                  
+                }
             }
         }
     }

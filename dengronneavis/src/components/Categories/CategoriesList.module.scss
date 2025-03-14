@@ -1,5 +1,5 @@
-@import './../../helper/colors.module.scss';
-@import './../../helper/mixin.module.scss';
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/colors.module.scss' as color;
 
 .categorySection{
 
@@ -12,12 +12,12 @@
                     border: none;
                     cursor: pointer;
                     color: rgba(0, 0, 0, 0.894);
-                    @include primaryFont(300);
+                    @include c.primaryFont(300);
                     text-align: left;
                     
                     &:focus {
-                       color: $focused;
-                       @include primaryFont(600);
+                       color: color.$focused;
+                       @include c.primaryFont(600);
                     }
                 }
         }

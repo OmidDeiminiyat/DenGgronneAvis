@@ -95,7 +95,7 @@ export const ProductSide = ({ productSlug: propSlug }) => {
     </form>
     </section>
      
-      {product && <Comments product={product.id} />}
+      {product && <Comments product={product.slug} />}
       </main>
     </>
   );

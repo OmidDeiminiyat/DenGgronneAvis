@@ -1,65 +1,62 @@
 import { useState, useEffect } from "react";
 import style from './Comment.module.scss';
+
 export function Comments({ product }) {
-    const [comments, setComments] = useState([]); 
+    const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
+    const accessToken =  localStorage.getItem('access_token');
+
 console.log(product);
 
-  useEffect(() => {
-    fetchComments();
-  }, []);
+    useEffect(() => {
+        fetchComments();
+    }, []);
 
-  const fetchComments = async () => {
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
+    const fetchComments = async () => {
+        var requestOptions = {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${accessToken}`,
+                "Content-Type": "application/json"
+            },
+            redirect: "follow"
+        };
+
+        try {
+            const response = await fetch(`http://localhost:4242/products/${product}`, requestOptions);
+            const result = await response.json();
+            setComments(result.data);
+        } catch (error) {
+            console.error("Error fetching comments:", error);
+        } finally {
+            setLoading(false);
+        }
     };
-
-    try {
-      const response = await fetch(`http://localhost:4242/comment/${product}`, requestOptions);
-      const result = await response.json(); // Assuming API returns JSON
-      setComments(result.data);
-    } catch (error) {
-      console.error("Error fetching comments:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-console.log(comments);
-
+console.log(comments.comments.length);
 
     return (
-        <>
-       <section className={style.mainComment}>
-            <div>
-                
-                {loading ? (
-                    <p>Loading comments...</p>
-                ) : comments.length > 0 ? (
-                    <span>
-                    {comments.map((items, index) => (
-                        <>
-                        <p>{items.user.firstname} (sælger): d. 22.22.2022</p>
-                        <ul>
-                            <li key={index}>
-                            {items.comment} 
-                            </li>
-                        </ul>
-                        </>
-                      
-                    ))}
-                    </span>
-                ) : (
-                    <p>No comments available.</p>
-                
-                )}
-            </div>
-            <div>
-                test
-            </div>
-           </section>
-          </>
-    
+      <section className={style.mainComment}>
+      <div>
+          {loading ? (
+              <p>Loading comments...</p>
+          ) : comments.comments.length > 0 ? (
+              <span>
+                  {comments.comments.map((item, index) => (
+                      <div key={index}>
+                          <p>{item.user.firstname} (sælger): d. 22.22.2022</p>
+                          <ul>
+                              <li>{item.comment}</li>
+                          </ul>
+                      </div>
+                  ))}
+              </span>
+          ) : (
+              <p>No comments available.</p>
+          )}
+      </div>
+      <div>
+          test
+      </div>
+  </section>
     );
-  }
-  
+}

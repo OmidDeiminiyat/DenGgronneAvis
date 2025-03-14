@@ -8,7 +8,6 @@
         width: 100%;
         max-width: 100%;
         margin-left: 0;
-        overflow: auto;
     }
 
     h3{
@@ -23,7 +22,7 @@
        .productsList{
         @include c.flexDirection(row);
         @media(max-width:600px){
-           
+            overflow: auto;
         }
         
         .fistDiv{

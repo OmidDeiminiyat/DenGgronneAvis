@@ -1,6 +1,6 @@
-@import './../../helper/mixin.module.scss';
-@import './../../helper/colors.module.scss';
+@use './../../helper/mixin.module.scss' as c; 
+@use './../../helper/colors.module.scss' as color;
 .textfield{
-   @include flexDirection(row);
+   @include c.flexDirection(row);
 
 }

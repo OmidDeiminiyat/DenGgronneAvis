@@ -6,9 +6,17 @@
     margin-left: 5%;
     margin-top: 60px;
     @include c.flexDirection(row);
+    @media(max-width:600px){
+        width: 100%;
+        margin-left: 0;
+        @include c.flexDirection(column);
+       }
 
     .firstSec{
         width: 50%;
+        @media(max-width:600px){
+            width: 100%;
+        }
         div{
             @include c.flexDirection(column);
             gap: 0;
@@ -32,6 +40,9 @@
         @include c.gridStyle(1fr);
         width: 50%;
         margin-top: 10px;
+        @media(max-width:600px){
+            width: 100%;
+        }
         .checkBox{
             @include c.flexDirection(row);
             position: relative;
@@ -49,12 +60,19 @@
         .profBut{
             @include c.flexDirection(column);
             justify-content: end;
+            @media(max-width:600px){
+                justify-content: center;
+            }
             button{
                 border: none;
                 width: 26%;
                 height: 40px;
                 margin-left: 84%;
                 color: color.$white;
+                @media(max-width:600px){
+                    margin-left: 0;
+                    width: 100%;
+                }
                 cursor: pointer;
                 &:nth-child(2){
                     background-color: color.$darkGreen;

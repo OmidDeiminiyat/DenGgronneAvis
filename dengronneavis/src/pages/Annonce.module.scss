@@ -3,6 +3,10 @@
 .mainAnnonce{
     @include c.primaryWidth;
     margin-bottom: 60px;
+    @media(max-width:600px){
+        width: 100%;
+        margin-left: 0;
+    }
     form{
         @include c.primaryWidth;
         h3{
@@ -40,6 +44,10 @@
             color: color.$white;
             cursor: pointer;
             background-color: color.$darkGreen;
+            @media(max-width:600px){
+                width: 34%;
+                margin-left: 66%;
+            }
         }
     }
 }
